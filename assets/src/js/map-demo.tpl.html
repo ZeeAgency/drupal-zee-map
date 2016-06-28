@@ -1,0 +1,75 @@
+<div class="container">
+  <div id="map" style="position: relative;">
+    <div
+      zee-map
+      zee-map-options="mapCtrl.mapOptions"
+      zee-map-on-ready="mapCtrl.onMapReady"
+      zee-map-on-bounds-change="mapCtrl.onMapBoundsChange">
+      <div style="position: absolute; z-index: 1; margin: 10px;">
+        <div
+          zee-map-search
+          zee-map-search-options="mapCtrl.searchOptions"
+          zee-map-search-on-geometry-change="mapCtrl.onSearchGeometryChange"
+          class="input-group">
+          <input ng-model="input" class="form-control" placeholder="Saisir un lieu..." autocomplete="off" spellcheck="false">
+          <span class="input-group-btn">
+            <button zee-map-search-button class="btn btn-primary">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div zee-map-canvas ng-non-bindable style="position: relative; height: 500px;"></div>
+      <div
+        ng-if="mapCtrl.markerIsVisible1"
+        zee-map-marker
+        zee-map-marker-options="mapCtrl.markerOptions1"
+        zee-map-marker-on-click="mapCtrl.onClickMarker1">
+      </div>
+      <div
+        zee-map-cluster>
+        <div
+          ng-if="mapCtrl.markerIsVisible2"
+          zee-map-marker
+          zee-map-marker-options="mapCtrl.markerOptions2"
+          zee-map-marker-on-click="mapCtrl.onClickMarker2">
+          <div
+            zee-map-infobox
+            zee-map-infobox-options="mapCtrl.infoBoxOptions2">
+            <div ng-non-bindable>
+              <div zee-map-infobox-inner>
+                <div class="text-right">
+                  <button ng-click="close()" class="btn btn-xs btn-default">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quisquam est doloremque, excepturi maxime qui, eos nihil quas atque optio sunt fugiat sit laborum itaque odit, ab corporis tenetur. A.  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre>{{ mapCtrl.markerOptions1.position | json }}</pre>
+      <pre>{{ geocode | json }}</pre>
+      <pre>{{ input | json }}</pre>
+    </div>
+  </div>
+  Marker 1 :
+  <input ng-model="mapCtrl.markerOptions1.position.lat"/>
+  <input ng-model="mapCtrl.markerOptions1.position.lng"/>
+  <br/>
+  Marker 2 :
+  <input ng-model="mapCtrl.markerOptions2.position.lat"/>
+  <input ng-model="mapCtrl.markerOptions2.position.lng"/>
+  <br/>
+  <br/>
+  <button class="btn btn-default" ng-click="mapCtrl.changeCenter()">changeCenter</button>
+  <button class="btn btn-default" ng-click="mapCtrl.changeZoom()">changeZoom</button>
+  <button class="btn btn-default" ng-click="mapCtrl.changeOptions()">changeOptions</button>
+  <br/><br/>
+  <button class="btn btn-default" ng-click="mapCtrl.changeMarker1()">changeMarker1</button>
+  <button class="btn btn-default" ng-click="mapCtrl.toggleMarker1()">toggleMarker1</button>
+  <button class="btn btn-default" ng-click="mapCtrl.changeMarker2()">changeMarker2</button>
+  <button class="btn btn-default" ng-click="mapCtrl.toggleMarker2()">toggleMarker2</button>
+  <div style="height: 500px;"></div>
+</div>

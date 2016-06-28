@@ -1,0 +1,5 @@
+name: Zee Map
+type: module
+description: Zee Agency's AngularJS Map Module
+core: 8.x
+package: Zee

@@ -1,0 +1,28 @@
+zee-map-module:
+  version: VERSION
+  js:
+    assets/dist/js/map.module.min.js: {minified: true}
+  dependencies:
+    - core/jquery
+    - zee_map/angularjs
+    - zee_map/requirejs
+
+zee-map-demo:
+  version: VERSION
+  css:
+    base:
+      assets/dist/css/map.min.css: {minified: true}
+  js:
+    assets/src/js/map.demo.js: {}
+  dependencies:
+    - zee_map/zee-map-module
+
+angularjs:
+  version: VERSION
+  js:
+    assets/dist/js/angular.min.js: {minified: true}
+
+requirejs:
+  version: VERSION
+  js:
+    assets/dist/js/require.min.js: {minified: true}

@@ -1,0 +1,12 @@
+{
+  "name": "zee-map",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "requirejs": "~2.1.16",
+    "angular": "~1.2"
+  }
+}

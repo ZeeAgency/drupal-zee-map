@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains zee_map.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function zee_map_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the zee_map module.
+    case 'help.page.zee_map':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Zee Agency&#039;s AngularJS Map Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function zee_map_theme($existing, $type, $theme, $path) {
+  return [
+    'block__zee_map_demo_block' => [
+      'render element' => 'elements',
+      'base hook' => 'block',
+    ],
+  ];
+}

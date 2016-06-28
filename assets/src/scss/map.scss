@@ -1,0 +1,30 @@
+[zee-map],
+[zee-map-canvas] {
+  position: relative;
+  min-height: 600px;
+}
+
+.infoBox {
+  background: none;
+  padding: 0;
+
+  > img {
+    display: none;
+  }
+}
+
+.infobox-inner {
+  background: white;
+  padding: 10px;
+  box-shadow: rgba(black, 0.5) 0 3px 10px;
+}
+
+.popin {
+  position: relative;
+  display: block;
+  padding: 1.5em;
+  font-size: 12px;
+
+  background: white;
+  border-radius: 3px;
+}
