@@ -41,15 +41,16 @@ define([
             mapController.panToOffset(0, -160);
           }
 
-
           require(['./plugins/infobox'], function(InfoBox) {
-            // console.log('InfoBox: ', InfoBox);
-            /* global InfoBox */
-
             var width = 300;
+            var offsetY = -50;
 
             if(isDesktop) {
               width = 460;
+            }
+
+            if(marker.icon && marker.icon.size && marker.icon.size.height) {
+              offsetY = -marker.icon.size.height - 20;
             }
 
             $scope.infobox = new InfoBox({
@@ -57,7 +58,7 @@ define([
               content: $element.html(),
               disableAutoPan: false,
               maxWidth: width,
-              pixelOffset: new google.maps.Size(-width / 2, -32),
+              pixelOffset: new google.maps.Size(-width / 2, offsetY),
               zIndex: null,
               boxStyle: {
                 width: width + 'px'
