@@ -3,8 +3,8 @@ requirejs.config({
 
   },
   paths: {
-    angular: "../../bower_components/angular/angular",
-    requirejs: "../../bower_components/requirejs/require"
+    angular: '../../bower_components/angular/angular',
+    requirejs: '../../bower_components/requirejs/require'
   },
   packages: [
 

@@ -42,7 +42,8 @@ define([
           }
 
 
-          require(['./plugins/infobox'], function() {
+          require(['./plugins/infobox'], function(InfoBox) {
+            // console.log('InfoBox: ', InfoBox);
             /* global InfoBox */
 
             var width = 300;
