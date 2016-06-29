@@ -10,7 +10,7 @@ module.exports = {
         'require.conf'
       ],
 
-      findNestedDependencies: false,
+      findNestedDependencies: true,
 
       paths: {
 

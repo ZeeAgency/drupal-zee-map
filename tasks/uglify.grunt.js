@@ -4,7 +4,6 @@ module.exports = {
     beautify: true,
     compress: false,
     /**/
-    banner: '/* <%= grunt.template.today("yyyy-mm-dd HH:MM") %> */\r\n'
   },
   dist: {
     files: {
